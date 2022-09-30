@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
   <script src="main.js" defer></script>
-  <title>Music Search</title>
+  <title>iTunes Search</title>
 </head>
+
 <body>
+  <div class="site-container">
+    <div class="music-info">
+      <h4 id="title"></h4>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+    </div>
+  </div>
+  <div class="artistsearch">
+    <form action="" method="get" id="music">
+      <input type="text" id="searchbar" placeholder="Search for a song or artist" />
+      <button type="submit" id="search-btn">Search</button>
+    </form>
+  </div>
+  <div id="searchResults"></div>
 </body>
+
 </html>
