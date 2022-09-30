@@ -14,14 +14,11 @@ function searchSongs(URL) {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   })
-    // fetch gives us a response in json format when it is ready.
     .then(function (response) {
       return response.json();
     })
 
-    //   .then(function (data) {
-    //     console.log(data);
-    //   });
+
     .then(function (iTunesData) {
       makeResults(iTunesData.results);
       if(iTunesData.results.length === 0) {
@@ -40,7 +37,7 @@ function makeResults(musicList) {
     let cover = document.createElement("img");
     let title = document.createElement("p");
     let artist = document.createElement("h1");
-    let playButton = document.createElement("audio");
+    let pButton = document.createElement("audio");
 
     resultsDiv.classList.add("songContainer");
     title.classList.add("song-title");
@@ -54,13 +51,13 @@ function makeResults(musicList) {
     } else {
         title.innerText = `${music.trackName}`;
     }
-    playButton.src = `${music.previewUrl}`;
-    playButton.controls = true;
+    pButton.src = `${music.previewUrl}`;
+    pButton.controls = true;
 
     resultsDiv.appendChild(cover);
     resultsDiv.appendChild(artist);
     resultsDiv.appendChild(title);
-    resultsDiv.appendChild(playButton);
+    resultsDiv.appendChild(pButton);
     searchResults.appendChild(resultsDiv);
   }
 }
